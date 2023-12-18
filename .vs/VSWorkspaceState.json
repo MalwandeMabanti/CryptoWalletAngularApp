@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\src",
     "\\src\\app",
-    "\\src\\app\\components"
+    "\\src\\app\\components",
+    "\\src\\app\\interceptors",
+    "\\src\\app\\modules",
+    "\\src\\app\\modules\\transactions",
+    "\\src\\app\\modules\\wallet"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\app\\modules\\shared",
   "PreviewInSolutionExplorer": false
 }
