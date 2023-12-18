@@ -1,1 +1,11 @@
 <p>transaction-history works!</p>
+
+<div class="transaction-history">
+  <h3>Transaction History</h3>
+  <ul>
+    <li *ngFor="let transaction of transactions">
+      Date: {{transaction.date | date}}, Amount: {{transaction.amount | currency}}
+    </li>
+  </ul>
+</div>
+
