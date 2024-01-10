@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service'
-import { WalletService } from '../../services/wallet.service'
 
 @Component({
   selector: 'app-login',
