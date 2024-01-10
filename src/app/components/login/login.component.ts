@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service'
+import { WalletService } from '../../services/wallet.service'
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,7 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   onSubmit() {
@@ -27,12 +28,14 @@ export class LoginComponent {
       }).subscribe(
         {
           next: (response) => {
+
             if (response.token) {
               this.router.navigate(['/dashboard']);
             }
             else {
               console.error("No token received");
             }
+
           },
           error: (error) => {
             console.error("Login error", error)
