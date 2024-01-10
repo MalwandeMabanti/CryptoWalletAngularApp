@@ -2,14 +2,14 @@
 
 <div class="dashboard-container">
   <div class="header">
-    <span class="user-name">{{ userName }}</span>
+    <span class="user-name">{{ email }}</span>
     <button (click)="logout()">Logout</button>
   </div>
   <div class="balance">
     <h2>Your Balance</h2>
     <p>{{ balance | currency }}</p>
+    <h2>Welcome {{firstName}} {{lastName}}</h2>
   </div>
   <app-send-crypto (onSend)="refreshData()"></app-send-crypto>
   <app-transaction-history [transactions]="transactions"></app-transaction-history>
 </div>
-
