@@ -8,7 +8,7 @@ import { WalletService } from '../../services/wallet.service';
 })
 export class SendCryptoComponent {
 
-  recipientAddress: string = '';
+  recipientAddress: string = ''; 
   amount: number = 0;
 
   @Output() onSend = new EventEmitter<void>();
