@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Transaction } from '../../models/transaction.model';
 
 @Component({
   selector: 'app-transaction-history',
@@ -7,5 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TransactionHistoryComponent {
 
-  @Input() transactions: any[] = []; 
+  @Input() transactions: Transaction[] = [];
+
 }
