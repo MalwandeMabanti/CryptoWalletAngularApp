@@ -4,14 +4,13 @@ import { Observable, tap } from 'rxjs';
 import { AuthResponse } from '../models/auth-response.model';
 import { Login } from '../models/login.model';
 import { Register } from '../models/register.model';
-//import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private apiUrl = 'https://localhost:44370/api/';
+  private apiUrl = 'https://localhost:44370/api/auth/';
 
   private post<T>(endpoint: string, payload: any)
   {
@@ -28,12 +27,12 @@ export class AuthService {
   }
 
   login(loginData: Login): Observable<AuthResponse> {
-    const response$ = this.post<AuthResponse>("auth/login", loginData);
+    const response$ = this.post<AuthResponse>("login", loginData);
     return this.handleAuthResponse(response$);
   }
 
   register(registerData: Register) {
-    const response$ = this.post<AuthResponse>("auth/register", registerData);
+    const response$ = this.post<AuthResponse>("register", registerData);
     return this.handleAuthResponse(response$);
   }
 
