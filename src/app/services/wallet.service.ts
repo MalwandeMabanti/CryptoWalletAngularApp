@@ -18,14 +18,18 @@ export class WalletService {
     return this.http.post(`${this.apiUrl}`+"send", data)
   }
 
-  receiveAllTransactions()
+  //receiveAllTransactions()
+  //{
+  //  return this.http.get<Transaction[]>(`${this.apiUrl}"GetAllUserTransactions"`)
+  //}
+
+  getSpecificUserWithOutTransactions()
   {
-    return this.http.get<Transaction[]>(`${this.apiUrl}"GetAllUserTransactions"`)
+    return this.http.get<SpecificUser>(`${this.apiUrl}GetSpecificUserWithOutTransactions`)
   }
 
-  getSpecificUserWithTransactions()
-  {
-    return this.http.get<SpecificUser>(`${this.apiUrl}GetSpecificUserWithTransactions`)
+  getSpecificUserWithInTransactions() {
+    return this.http.get<SpecificUser>(`${this.apiUrl}GetSpecificUserWithInTransactions`)
   }
 
 
