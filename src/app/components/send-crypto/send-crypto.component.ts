@@ -8,7 +8,8 @@ import { WalletService } from '../../services/wallet.service';
 })
 export class SendCryptoComponent {
 
-  recipientAddress: string = ''; 
+  recipientAddress: string = '';
+  userId: string = '';
   amount: number = 0;
 
   @Output() onSend = new EventEmitter<void>();
@@ -19,13 +20,15 @@ export class SendCryptoComponent {
 
     this.walletService.sendCrypto({
       RecipientEmail: this.recipientAddress,
+      UserId: this.userId,
       Amount: this.amount
     }).subscribe(response =>
     {
       console.log(response);
-      });
+      this.onSend.emit();
+    });
 
-    this.onSend.emit();
+    //this.onSend.emit();
   }
 
 }

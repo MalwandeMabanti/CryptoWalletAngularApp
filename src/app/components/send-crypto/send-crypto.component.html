@@ -1,11 +1,15 @@
-<p>send-crypto works!</p>
-
 <div class="send-crypto">
   <h3>Send Cryptocurrency</h3>
-  <form (ngSubmit)="sendCrypto()">
-    <input type="text" [(ngModel)]="recipientAddress" placeholder="Recipient Address" name="address">
-    <input type="number" [(ngModel)]="amount" placeholder="Amount" name="amount">
-    <button type="submit">Send</button>
+  <form (ngSubmit)="sendCrypto()" class="crypto-form">
+    <div class="input-group">
+      <input type="text" [(ngModel)]="recipientAddress" placeholder="Recipient Address" name="address" class="input-field">
+    </div>
+    <div class="input-group">
+      <input type="text" [(ngModel)]="userId" placeholder="Private Key" name="userId" class="input-field">
+    </div>
+    <div class="input-group">
+      <input type="number" [(ngModel)]="amount" placeholder="Amount" name="amount" class="input-field">
+    </div>
+    <button type="submit" class="submit-button">Send</button>
   </form>
 </div>
-
