@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit {
   lastName: string = "";
   email: string = "";
   balance: number = 0;
+  transactionsOut: Transaction[] = []
+  transactionsIn: Transaction[] = []
   transactions: Transaction[] = []; 
 
   constructor(
@@ -25,34 +27,30 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUserWithTransactions();
+    //this.getUserWithOutTransactions();
+    this.getUserWithAllTransactions()
   }
 
-  getUserWithTransactions()
+  getUserWithAllTransactions()
   {
-    this.walletService.getSpecificUserWithTransactions()
+    this.getUserWithOutTransactions()
+    this.getUserWithInTransactions()
+    this.transactions = [...this.transactionsOut, ...this.transactionsIn]
+  }
+
+  getUserWithOutTransactions()
+  {
+    this.walletService.getSpecificUserWithOutTransactions()
       .subscribe(
         {
           next: (response) => {
-
-            console.log("Response:", response);
 
             this.userId = response.userId
             this.firstName = response.firstName
             this.lastName = response.lastName
             this.email = response.email
             this.balance = response.balance
-            this.transactions = response.transactions
-
-            console.log("Assigned Values:", {
-              userId: this.userId,
-              firstName: this.firstName,
-              lastName: this.lastName,
-              email: this.email,
-              balance: this.balance,
-              transactions: this.transactions
-            });
-
+            this.transactionsOut = response.transactions
           },
           error: (err) => {
             console.error('Error fetching user with transactions:', err);
@@ -60,28 +58,46 @@ export class DashboardComponent implements OnInit {
         })
   }
 
-  loadTransactions(): void {
-
-    this.walletService.receiveAllTransactions()
+  getUserWithInTransactions() {
+    this.walletService.getSpecificUserWithInTransactions()
       .subscribe(
         {
           next: (response) => {
-            this.transactions = response
+
+            this.userId = response.userId
+            this.firstName = response.firstName
+            this.lastName = response.lastName
+            this.email = response.email
+            this.balance = response.balance
+            this.transactionsIn = response.transactions
           },
-          error: (error) => {
-            console.error(error)
+          error: (err) => {
+            console.error('Error fetching user with transactions:', err);
           }
-      }
-    );
+        })
   }
 
+  //loadTransactions(): void {
+
+  //  this.walletService.receiveAllTransactions()
+  //    .subscribe(
+  //      {
+  //        next: (response) => {
+  //          this.transactions = response
+  //        },
+  //        error: (error) => {
+  //          console.error(error)
+  //        }
+  //    }
+  //  );
+  //}
   logout(): void {
     this.authService.logout();
     this.router.navigate([""]);
   }
 
   refreshData(): void {
-    this.loadTransactions();
+    this.getUserWithAllTransactions();
   }
 
 }
