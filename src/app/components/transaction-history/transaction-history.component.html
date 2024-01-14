@@ -1,10 +1,21 @@
-<p>transaction-history works!</p>
-
 <div class="transaction-history">
   <h3>Transaction History</h3>
-  <ul>
-    <li *ngFor="let transaction of transactions">
-      amount: {{transaction.amount}}
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Sending Email</th>
+      <th>Recipient Email</th>
+      <th>Amount</th>
+    </tr>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{transaction.firstName}}</td>
+      <td>{{transaction.lastName}}</td>
+      <td>{{transaction.sendingEmail}}</td>
+      <td>{{transaction.recipientEmail}}</td>
+      <td>{{transaction.amount}}</td>
+    </tr>
+  </table>
 </div>
+
+
