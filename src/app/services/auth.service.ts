@@ -52,14 +52,4 @@ export class AuthService {
   removeToken(): void {
     localStorage.removeItem('authToken');
   }
-
-  //private currentUser: User | null = null; 
-
-  //setCurrentUser(user: User): void {
-  //  this.currentUser = user;
-  //}
-
-  //getCurrentUser(): User | null {
-  //  return this.currentUser;
-  //}
 }
