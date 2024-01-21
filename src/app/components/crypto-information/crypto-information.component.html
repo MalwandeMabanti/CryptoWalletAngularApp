@@ -1,0 +1,20 @@
+<p>crypto-information works!</p>
+
+
+<div class="crypto-data" *ngIf="cryptoInformation; else loadingOrError">
+  <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696501400" class="crypto-image" />
+  <div class="market-data">
+    <h2>Crypto Information</h2>
+    <p><strong>ID:</strong> {{ cryptoInformation?.id }}</p>
+    <p><strong>Name:</strong> {{ cryptoInformation?.name }}</p>
+    <p><strong>Last Price:</strong> {{ cryptoInformation?.last | currency }}</p>
+    <p><strong>High:</strong> {{ cryptoInformation?.high | currency }}</p>
+    <p><strong>Low:</strong> {{ cryptoInformation?.low | currency }}</p>
+    <p><strong>Bid:</strong> {{ cryptoInformation?.bid | currency }}</p>
+    <p><strong>Ask:</strong> {{ cryptoInformation?.ask | currency }}</p>
+  </div>
+</div>
+
+<ng-template #loadingOrError>
+  <p>Loading crypto information or an error occurred...</p>
+</ng-template>
