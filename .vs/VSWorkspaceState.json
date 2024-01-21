@@ -4,11 +4,10 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
-    "\\src\\app\\interceptors",
-    "\\src\\app\\modules",
-    "\\src\\app\\modules\\transactions",
-    "\\src\\app\\modules\\wallet"
+    "\\src\\app\\components\\home",
+    "\\src\\app\\components\\login",
+    "\\src\\app\\components\\register"
   ],
-  "SelectedNode": "\\src\\app\\modules\\shared",
+  "SelectedNode": "\\src\\app\\components\\home\\home.component.scss",
   "PreviewInSolutionExplorer": false
 }
