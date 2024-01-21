@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.sidebar {
+  background-color: #00ff21;
+  width: 250px;
+  position: fixed;
+  top: 56px; 
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 100; 
+}
+
+
+.sidebar p {
+  margin: 0.5rem 0;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: left;
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #ddd;
+}
