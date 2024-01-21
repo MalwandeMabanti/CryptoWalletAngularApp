@@ -1,12 +1,12 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Vertically center the child content */
-  align-items: center; /* Horizontally center the child content, if desired */
-  height: calc(100vh - 56px); /* Full viewport height minus the navbar height */
-  margin-left: 250px; /* Same as the sidebar's width */
-  padding: 0; /* Remove padding if using flexbox to center */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  justify-content: center;
+  align-items: center; 
+  height: calc(100vh - 56px); 
+  margin-left: 250px; 
+  padding: 0; 
+  box-sizing: border-box; 
 }
 
 @media screen and (max-width: 768px) {
@@ -16,11 +16,10 @@
   }
 
   .main-content {
-    margin-left: 0; /* Remove the left margin on smaller screens */
-    margin-top: 0; /* Remove the top margin on smaller screens */
-   // height: calc(100vh - 56px); /* Adjust height for mobile */
-    height: auto; /* Adjust height for mobile */
-    padding: 0 20px; /* Add some horizontal padding on smaller screens */
+    margin-left: 0; 
+    margin-top: 0; 
+    height: auto; 
+    padding: 0 20px; 
   }
 }
 
