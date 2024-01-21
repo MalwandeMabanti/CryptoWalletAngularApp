@@ -1,0 +1,40 @@
+.navbar {
+  background-color: #343a40;
+  padding: 0.5rem 1rem;
+  width: 98%;
+  height: 56px; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050; 
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.nav-links .nav-item {
+  color: #d1d1d1;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.nav-links .nav-item:hover {
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links .nav-item {
+    display: inline-block; 
+  }
+}
+
