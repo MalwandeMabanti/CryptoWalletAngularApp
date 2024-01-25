@@ -16,4 +16,8 @@ export class SidebarComponent {
   {
     this.router.navigate(['/cryptoInformation'])
   }
+
+  get currentUrl() : string {
+    return this.router.url;
+  }
 }

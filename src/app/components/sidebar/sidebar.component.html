@@ -1,5 +1,8 @@
-<div class="sidebar">
-  <p class="sidebar-item">
-    <button routerLink="/cryptoInformation">See Bitcoin</button>
-  </p>
+<div *ngIf="currentUrl !== '/login' && currentUrl !== '/dashboard'">
+  <div class="sidebar">
+    <p class="sidebar-item">
+      <button routerLink="/cryptoInformation">See Bitcoin</button>
+    </p>
+  </div>
 </div>
+
