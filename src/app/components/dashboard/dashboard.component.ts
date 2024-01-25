@@ -35,7 +35,9 @@ export class DashboardComponent implements OnInit {
   {
     this.getUserWithOutTransactions()
     this.getUserWithInTransactions()
-    this.transactions = [...this.transactionsOut, ...this.transactionsIn]
+   
+    //this.transactions = [...this.transactionsOut, ...this.transactionsIn]
+    console.log(this.transactions, " All Transactions");
   }
 
   getUserWithOutTransactions()
@@ -50,7 +52,10 @@ export class DashboardComponent implements OnInit {
             this.lastName = response.lastName
             this.email = response.email
             this.balance = response.balance
-            this.transactionsOut = response.transactions
+            //this.transactionsOut = response.transactions
+            this.transactions = [...response.transactions]
+            console.log(response.transactions, " Out Transactions")
+            
           },
           error: (err) => {
             console.error('Error fetching user with transactions:', err);
@@ -69,7 +74,10 @@ export class DashboardComponent implements OnInit {
             this.lastName = response.lastName
             this.email = response.email
             this.balance = response.balance
-            this.transactionsIn = response.transactions
+            //this.transactionsIn = response.transactions
+            this.transactions = [...response.transactions]
+            console.log(response.transactions, " In Transactions")
+            
           },
           error: (err) => {
             console.error('Error fetching user with transactions:', err);
@@ -91,10 +99,10 @@ export class DashboardComponent implements OnInit {
   //    }
   //  );
   //}
-  logout(): void {
-    this.authService.logout();
-    this.router.navigate([""]);
-  }
+  //logout(): void {
+  //  this.authService.logout();
+  //  this.router.navigate([""]);
+  //}
 
   refreshData(): void {
     this.getUserWithAllTransactions();
