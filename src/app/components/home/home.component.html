@@ -2,5 +2,22 @@
   <p>home works!</p>
   <h1>Hello World</h1>
 
+  <div class="transaction-history">
+    <h3>Transaction History</h3>
+    <table>
+      <tr>
+        <th>Sending Email</th>
+        <th>Recipient Email</th>
+        <th>Amount</th>
+      </tr>
+      <tr *ngFor="let transaction of allTransactions">
+        <td>{{transaction.sendingEmail}}</td>
+        <td>{{transaction.recipientEmail}}</td>
+        <td>{{transaction.amount}}</td>
+      </tr>
+    </table>
+  </div>
+
 </div>
+
 
