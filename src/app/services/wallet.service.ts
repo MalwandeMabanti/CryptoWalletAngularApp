@@ -3,6 +3,7 @@ import { Wallet } from '../models/wallet.model';
 import { HttpClient } from '@angular/common/http'
 import { Transaction } from '../models/transaction.model';
 import { SpecificUser } from '../models/specific-user.model';
+import { PublicTrasactions } from '../models/public-transaction.model';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import { SpecificUser } from '../models/specific-user.model';
 export class WalletService {
 
   private apiUrl = 'https://localhost:44370/api/wallet/';
+  private publicApiUrl = 'https://localhost:44370/api/publicwallet/';
+  
 
   constructor(private http: HttpClient) { }
 
@@ -18,10 +21,11 @@ export class WalletService {
     return this.http.post(`${this.apiUrl}`+"send", data)
   }
 
-  //receiveAllTransactions()
-  //{
-  //  return this.http.get<Transaction[]>(`${this.apiUrl}"GetAllUserTransactions"`)
-  //}
+  receiveAllTransactions()
+  {
+    return this.http.get<PublicTrasactions[]>(`${this.publicApiUrl}GetAllUserTransactions`)
+                                                               
+  } 
 
   getSpecificUserWithOutTransactions()
   {

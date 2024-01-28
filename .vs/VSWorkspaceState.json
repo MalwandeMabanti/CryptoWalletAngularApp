@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\components",
     "\\src\\app\\components\\home",
-    "\\src\\app\\components\\login",
-    "\\src\\app\\components\\register"
+    "\\src\\app\\components\\transaction-history"
   ],
-  "SelectedNode": "\\src\\app\\components\\home\\home.component.scss",
   "PreviewInSolutionExplorer": false
 }
