@@ -21,8 +21,6 @@ h1 {
   padding: 20px;
 }
 
-
-
 .home-history {
   font-family: Arial, sans-serif;
   margin-top: 140px;
@@ -38,8 +36,10 @@ h1 {
 }
 
 .home-history, .home-section {
+  width: calc(100% - 250px);
+  margin-top: 40px;
   font-family: Arial, sans-serif;
-  margin-top: 40px; 
+  margin-top: 40px;
   width: 100%;
   padding-top: 20px;
 }
@@ -51,7 +51,6 @@ h1 {
   padding-right: 100px;
 }
 
-
 .news-subsection, .education-subsection {
   margin-bottom: 20px; 
 }
@@ -60,12 +59,11 @@ h1 {
 .home-section > .education-subsection:first-child {
 }
 
-
 .subsection-container {
   display: flex;
   justify-content: space-around; 
   align-items: center; 
-  padding-left: 100px;
+  padding-left: 200px;
 }
 
 .subsection {
@@ -82,7 +80,6 @@ h1 {
     margin: 10px 0; 
   }
 }
-
 
 table {
   width: 60%;
