@@ -6,11 +6,8 @@
       <a routerLink="/" class="nav-logo">Home</a>
 
       <div class="nav-links">
-        <button class="logout-button" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
-      </div>
-
-      <div class="nav-links">
-        <button class="logout-button" *ngIf="!isLoggedIn" (click)="login()">Login</button>
+        <button class="logging-button" *ngIf="!isLoggedIn" (click)="login()">Login</button>
+        <button class="logging-button" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
       </div>
 
     </div>

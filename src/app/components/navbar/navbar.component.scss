@@ -31,7 +31,7 @@
   gap: 10px; 
 }
 
-.nav-links .logout-button {
+.nav-links .logging-button {
   color: #ecf0f1;
   background-color: transparent;
   border: 2px solid #ecf0f1; 
@@ -42,8 +42,8 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-links .logout-button:hover {
-  background-color: #34495e; 
+.nav-links .logging-button:hover {
+  background-color: #34495e;
   color: white;
 }
 
@@ -58,7 +58,7 @@
     padding-top: 0.5rem;
   }
 
-  .nav-links .logout-button {
+  .nav-links .logging-button {
     width: 100%;
     text-align: center;
   }
