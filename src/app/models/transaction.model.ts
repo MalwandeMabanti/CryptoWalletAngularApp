@@ -11,7 +11,9 @@ export interface Transaction {
 
   recipientEmail: string,
 
-  amount: number
+  amount: number,
+
+  transactionType: string,
 
   userId: string
 }
