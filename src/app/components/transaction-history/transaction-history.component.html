@@ -7,6 +7,7 @@
       <th>Sending Email</th>
       <th>Recipient Email</th>
       <th>Amount</th>
+      <th>Transaction Type</th>
     </tr>
     <tr *ngFor="let transaction of transactions">
       <td>{{transaction.firstName}}</td>
@@ -14,6 +15,7 @@
       <td>{{transaction.sendingEmail}}</td>
       <td>{{transaction.recipientEmail}}</td>
       <td>{{transaction.amount}}</td>
+      <td>{{transaction.transactionType}}</td>
     </tr>
   </table>
 </div>
